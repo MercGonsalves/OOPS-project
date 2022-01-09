@@ -1,0 +1,30 @@
+#include<simplecpp>
+
+main_program{
+initCanvas("Ball losing momentum by bouncing",900,900);
+int x,y=0,t=400,c=1;
+int e=getClick();
+      for(x=40;x<=600;x=x+2)
+ {
+     Line l(0,600,600,600);
+    Line l1(0,0,600,0);
+   Circle d(x,y,20);
+       d.setColor(RED);
+     d.setFill(RED);
+   delay(100);
+   if(y>600-20)
+     {
+         c=0;
+         t=t-40;
+     }
+     if(y<=(600-t))
+    {
+           c=1;
+     }
+        if(t>=40)
+       y=y+(c? 15:-15);
+     wait(0.01);
+}
+
+
+}
